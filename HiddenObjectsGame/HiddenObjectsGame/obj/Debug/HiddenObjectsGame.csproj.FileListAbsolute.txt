@@ -1,0 +1,7 @@
+C:\Users\MRF4ROG\Desktop\HiddenObjectsGame\HiddenObjectsGame\HiddenObjectsGame\obj\Debug\HiddenObjectsGame.csproj.AssemblyReference.cache
+C:\Users\MRF4ROG\Desktop\HiddenObjectsGame\HiddenObjectsGame\HiddenObjectsGame\obj\Debug\HiddenObjectsGame.csproj.CoreCompileInputs.cache
+C:\Users\MRF4ROG\Desktop\HiddenObjectsGame\HiddenObjectsGame\HiddenObjectsGame\bin\Debug\HiddenObjectsGame.exe.config
+C:\Users\MRF4ROG\Desktop\HiddenObjectsGame\HiddenObjectsGame\HiddenObjectsGame\bin\Debug\HiddenObjectsGame.exe
+C:\Users\MRF4ROG\Desktop\HiddenObjectsGame\HiddenObjectsGame\HiddenObjectsGame\bin\Debug\HiddenObjectsGame.pdb
+C:\Users\MRF4ROG\Desktop\HiddenObjectsGame\HiddenObjectsGame\HiddenObjectsGame\obj\Debug\HiddenObjectsGame.exe
+C:\Users\MRF4ROG\Desktop\HiddenObjectsGame\HiddenObjectsGame\HiddenObjectsGame\obj\Debug\HiddenObjectsGame.pdb
