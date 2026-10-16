@@ -1,36 +1,69 @@
 # Hidden Objects Game
 
-## Description
-This project is a console-based hidden object game developed in C#. The goal is to find hidden objects in a 20x20 grid.
+[![C#](https://img.shields.io/badge/Language-C%23-239120?style=flat-square&logo=csharp&logoColor=white)](https://learn.microsoft.com/en-us/dotnet/csharp/)
+[![.NET](https://img.shields.io/badge/Framework-.NET%20Framework-512BD4?style=flat-square&logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
+[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Cross--Platform-lightgray?style=flat-square)](https://dotnet.microsoft.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-gray?style=flat-square)](LICENSE)
 
-## Rules
-- There are 3 hidden objects of varying lengths randomly placed in the grid.
-- The objects are initially hidden and marked with an `X`.
-- The player will be prompted to enter coordinates to find the hidden objects.
-- If the entered coordinates hit any part of a hidden object, the player earns +5 points, and the spot is marked with a `1`. Otherwise, the player loses 1 point, and the spot is marked with a `0`.
-- The game ends after 100 attempts.
-- The final score is displayed at the end of the game.
+A console-based tactical grid search and hidden object puzzle game developed in C#. The player inspects a dynamically populated 20x20 grid to locate concealed multi-segment targets using coordinate targeting and spatial deduction.
 
-## Usage
-1. Clone this repository to your local machine:
-    ```bash
-    git clone https://github.com/yourusername/HiddenObjectsGame.git
-    ```
-2. Navigate to the project directory:
-    ```bash
-    cd HiddenObjectsGame
-    ```
-3. Open the project in Visual Studio or any other C# IDE.
-4. Run the program.
+---
 
-## How to Play
-- When the program starts, a 20x20 grid is created with hidden objects.
-- The player is asked to input coordinates (row and column).
-- The score is updated based on the input coordinates and the grid is displayed with the updated status.
-- After 100 attempts, the game ends, and the final score is shown.
+## Game Mechanics & Rules
 
-## Contribution
-If you want to contribute, please fork the repository and submit a pull request. Any contributions and feedback are welcome.
+- **Grid Architecture:** A dynamic 20x20 matrix representing the active game board.
+- **Hidden Targets:** 3 hidden multi-segment objects are randomly seeded across horizontal and vertical orientations without overlapping.
+- **Colorized Terminal Rendering:**
+  - `X` : Unexplored fog-of-war grid tile.
+  - `1` (Green) : Successful target strike (+5 points).
+  - `O` (Red) : Missed coordinate (-1 point).
+- **Targeting System:** The user inputs Cartesian $(X, Y)$ coordinates for each turn.
+- **Session Lifecycle:** The player has a quota of 100 turns. Final accuracy and aggregate score are computed and rendered upon session completion.
+
+---
+
+## Technical Architecture
+
+```
+HiddenObjectsGame/
+├── HiddenObjectsGame.sln             # Solution configuration
+└── HiddenObjectsGame/
+    ├── App.config                    # Runtime application settings
+    ├── HiddenObjectsGame.csproj      # C# project definition & dependencies
+    └── Program.cs                    # Game loop, coordinate validation & ASCII renderer
+```
+
+### Core Logic Modules in `Program.cs`
+- `player()`: Handles player initialization and username input.
+- `draw_board()`: Color-coded ASCII buffer rendering loop.
+- `fire()`: Interactive turn processor with input bounds checking.
+- `matrix()`: Algorithmic procedural placement of objects onto the 20x20 grid.
+
+---
+
+## Getting Started
+
+### Prerequisites
+- [.NET SDK](https://dotnet.microsoft.com/download) or [Visual Studio 2022](https://visualstudio.microsoft.com/) (with .NET desktop development workload).
+
+### Installation & Run
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/furkanndev/HiddenObjectsGame.git
+   cd HiddenObjectsGame
+   ```
+
+2. Build and run using the .NET CLI:
+   ```bash
+   dotnet build
+   dotnet run --project HiddenObjectsGame/HiddenObjectsGame/HiddenObjectsGame.csproj
+   ```
+
+   *Alternatively, open `HiddenObjectsGame/HiddenObjectsGame.sln` directly in Visual Studio and press `F5`.*
+
+---
 
 ## License
-This project is licensed under the MIT License. See the `LICENSE` file for more information.
+
+This project is licensed under the [MIT License](LICENSE).
